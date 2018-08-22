@@ -9,6 +9,7 @@ const defaultColor = '#0000ff'
 window.addEventListener('load', startup, false)
 
 function startup () {
+  console.log('loaded')
   colorWell = document.querySelector('#colorWell')
   colorWell.value = defaultColor
   colorWell.addEventListener('input', updateFirst, false)
@@ -74,7 +75,7 @@ function updateAll (event) {
 // //     .catch(colorUi.failure)
 // // }
 
-// const addHandlers = () => {
+const addHandlers = () => {
   // $('#show_colors').on('click', onShowColors)
   // $('#build_color').on('submit', onCreateColor)
   // $('#update_color').on('submit', onUpdateColor)
@@ -94,7 +95,7 @@ function updateAll (event) {
 // })
 
 module.exports = {
-  // addHandlers,
+  addHandlers,
   // onCreateColor
   // onGetColors,
   // onDeleteColor,
