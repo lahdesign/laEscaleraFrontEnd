@@ -14,6 +14,105 @@
     </head>
     <body>
       <h1>La Escalera</h1>
+
+      <img src="./assets/images/diamondpatch_two.gif" alt="diamond">
+
+      <div id = "background">
+        <p>
+
+        </p>
+
+      </div>
+
+      <div id = "info">
+          <p>
+              General info about the pop up
+            </p>
+
+      </div>
+
+      <div id = "callForProposals">
+          <p>
+              Call for Proposals
+            </p>
+      </div>
+
+      <div id = "signUp">
+        <form id="sign_up" class="border">
+          <fieldset>
+            <legend>Create User</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div id = "signIn">
+        <form id="sign_in" class="border">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+
+         <!-- Start of user info -->
+  <!-- display user info on signIn -->
+   <div id = "userInfo">
+
+    <form id="change_password" class="border">
+     <fieldset>
+       <legend>Change password</legend>
+       <input type="password" name="passwords[old]" placeholder="Old Password">
+       <input type="password" name="passwords[new]" placeholder="New Password">
+       <input type="submit" value="Change Password!">
+     </fieldset>
+   </form>
+
+   <form id="sign_out" class="border">
+       <fieldset>
+         <legend>Sign Out!</legend>
+         <input type="submit" value="Sign out!">
+       </fieldset>
+     </form>
+
+
+
+      <div id="buildColor">
+        <form id="build_proposal" class="border">
+          <fieldset>
+            <legend>Build Color</legend>
+            <input type="color" name="color[value]" placeholder="Color Value">
+          </fieldset>
+        </form>
+      </div>
+      <div class="content"></div>
+      <div id = "updateColor">
+        <form id="update_color" class="border">
+          <fieldset>
+            <legend>Update color</legend>
+            <input type="color" name="color[value]" placeholder="Color Value">
+          </fieldset>
+        </form>
+
+        <button id="show_colors">Show All Colors</button>
+
+
+      <div id = "viewColor">
+          <p>
+              View Color
+            </p>
+      </div>
+      <div id = "allColors">
+          <p>
+              All Colors
+            </p>
+      </div>
       <fieldset>
         <legend>Select your background color</legend>
 

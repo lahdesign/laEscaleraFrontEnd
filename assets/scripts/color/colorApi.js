@@ -1,7 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const createcolor = function (data) {
+const createColor = function (data) {
   return $.ajax({
     url: config.apiUrl + '/colors/',
     method: 'POST',
@@ -12,7 +12,7 @@ const createcolor = function (data) {
 
   })
 }
-const showcolors = function () {
+const showColors = function () {
   return $.ajax({
     url: config.apiUrl + '/colors/',
     method: 'GET',
@@ -22,7 +22,7 @@ const showcolors = function () {
   })
 }
 
-const updatecolor = function (data) {
+const updateColor = function (data) {
   return $.ajax({
     url: config.apiUrl + '/colors/' + data.color.id,
     method: 'PATCH',
@@ -32,7 +32,7 @@ const updatecolor = function (data) {
     data
   })
 }
-const deletecolor = (colorId) => {
+const deleteColor = (colorId) => {
   return $.ajax({
     url: config.apiUrl + '/colors/' + colorId,
     method: 'DELETE',
@@ -43,8 +43,8 @@ const deletecolor = (colorId) => {
 }
 
 module.exports = {
-  createcolor,
-  updatecolor,
-  showcolors,
-  deletecolor
+  createColor,
+  updateColor,
+  showColors,
+  deleteColor
 }

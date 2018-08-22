@@ -12,14 +12,14 @@ const onSignUpSuccess = function () {
 const onSignUpFailure = function (error) {
   console.error(error)
   $('#sign-up-message').text('Signed up failed.')
-  $('#sign-up-message').css('background-color', 'red')
+  $('#sign-up-message').css('background-Color', 'red')
   // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
 }
 
 const onSignInSuccess = function (data) {
   $('#sign-in-message').text('Signed in successfully.')
-  $('#sign-in-message').css('background-color', 'green')
+  $('#sign-in-message').css('background-Color', 'green')
   // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
   store.user = data.user
@@ -30,7 +30,7 @@ const onSignInSuccess = function (data) {
 
 const onSignInFailure = function () {
   $('#sign-in-message').text('Signed in failed.')
-  $('#sign-in-message').css('background-color', 'red')
+  $('#sign-in-message').css('background-Color', 'red')
   // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
 }
@@ -41,7 +41,7 @@ const onSignInFailure = function () {
 // }
 // const onSignUpSuccess = function () {
 //   $('#sign-up-message').text('Signed up successfully.')
-//   $('#sign-up-message').css('background-color', 'green')
+//   $('#sign-up-message').css('background-Color', 'green')
 //   resetForms()
 //   setTimeout(() => $('#sign-up-message').text(''), 3000)
 // }
@@ -54,19 +54,19 @@ const onChangePasswordSuccess = function () {
 
 const failure = function () {
   $('#userMessage').text('Error')
-  $('#userMessage').css('background-color', '#800')
+  $('#userMessage').css('background-Color', '#800')
   // console.log('Failure ran. Error is :', error)
 }
 // const onChangePasswordFailure = function () {
 //   $('#change-password-message').text('Password change failed.')
-//   $('#change-password-message').css('background-color', 'red')
+//   $('#change-password-message').css('background-Color', 'red')
 //   resetForms()
 //   setTimeout(() => $('#change-password-message').text(''), 3000)
 // }
 
 const onSignOutSuccess = function () {
   $('#sign-out-message').text('Signed out successfully.')
-  $('#sign-out-message').css('background-color', 'green')
+  $('#sign-out-message').css('background-Color', 'green')
   // resetForms()
   $('#game-board').html('')
   setTimeout(() => $('#sign-out-message').text(''), 3000)

@@ -1,10 +1,10 @@
 'use strict'
 // const config = require('../config')
 const getFormFields = require('../../../lib/get-form-fields')
-const colorApi = require('../color/colorApi')
+const colorApi = require('../Color/colorApi')
 const colorUi = require('../color/colorUi')
 
-const onCreatecolor = (event) => {
+const onCreateColor = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   colorApi.createcolor(data)
@@ -12,7 +12,7 @@ const onCreatecolor = (event) => {
     .catch(colorUi.failure)
 }
 
-const onShowcolors = function (event) {
+const onShowColors = function (event) {
   event.preventDefault()
   $('.content').html('')
   colorApi.showcolors()
@@ -20,7 +20,7 @@ const onShowcolors = function (event) {
     .catch(colorUi.onError)
 }
 
-const onUpdatecolor = (event) => {
+const onUpdateColor = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   colorApi.updatecolor(data)
@@ -28,38 +28,38 @@ const onUpdatecolor = (event) => {
     .catch(colorUi.failure)
 }
 
-// const onGetcolors = (event) => {
+// const onGetColors = (event) => {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
-//   colorApi.getcolors()
-//     .then(colorUi.getcolorsSuccess)
+//   colorApi.getColors()
+//     .then(colorUi.getColorsSuccess)
 //     .catch(colorUi.failure)
 // }
 
-const onClearcolor = (event) => {
+const onClearColor = (event) => {
   event.preventDefault()
-  colorUi.clearcolor()
+  colorUi.clearColor()
 }
-// const onDeletecolor = (event) => {
+// const onDeleteColor = (event) => {
 //   event.preventDefault()
 //   console.log('made it here')
 //   // closest is handlebar syntax
 //   const colorId = $(event.target).closest('ul').attr('data-id')
-//   colorApi.deletecolor(colorId)
-//     .then(() => onShowcolors(event))
+//   colorApi.deleteColor(colorId)
+//     .then(() => onShowColors(event))
 //     .catch(colorUi.failure)
 // }
 
 const addHandlers = () => {
-  $('#show_colors').on('click', onShowcolors)
-  $('#build_color').on('submit', onCreatecolor)
-  $('#update_color').on('submit', onUpdatecolor)
+  $('#show_colors').on('click', onShowColors)
+  $('#build_color').on('submit', onCreateColor)
+  $('#update_color').on('submit', onUpdateColor)
   // $('#delete_color').on('click', onDeletecolor)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }
 
-// $('.newcolor').on('click', function () {
+// $('.newColor').on('click', function () {
 //   store.gameInstance = new Game.Game()
 //   create.createGame()
 //   .then(function (data) {
@@ -71,9 +71,9 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onCreatecolor,
-  // onGetcolors,
-  // onDeletecolor,
-  onClearcolor,
-  onShowcolors
+  onCreateColor,
+  // onGetColors,
+  // onDeleteColor,
+  onClearColor,
+  onShowColors
 }
