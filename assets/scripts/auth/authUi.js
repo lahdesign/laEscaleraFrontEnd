@@ -23,7 +23,7 @@ const onSignInSuccess = function (data) {
   // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
   store.user = data.user
-  // store.proposalInstance()
+  // store.colorInstance()
   $('#signUp').hide()
   $('#signIn').hide()
 }

@@ -23,7 +23,7 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.onSignInSuccess)
     .catch(authUi.onSignInFailure)
-  $('#buildProposal').show()
+  $('#buildcolor').show()
 }
 
 const onchangePassword = function (event) {

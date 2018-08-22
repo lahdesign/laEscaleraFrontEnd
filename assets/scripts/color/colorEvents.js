@@ -1,65 +1,65 @@
 'use strict'
 // const config = require('../config')
 const getFormFields = require('../../../lib/get-form-fields')
-const proposalApi = require('../proposal/proposalApi')
-const proposalUi = require('../proposal/proposalUi')
+const colorApi = require('../color/colorApi')
+const colorUi = require('../color/colorUi')
 
-const onCreateProposal = (event) => {
+const onCreatecolor = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  proposalApi.createProposal(data)
-    .then(proposalUi.createProposalSuccess)
-    .catch(proposalUi.failure)
+  colorApi.createcolor(data)
+    .then(colorUi.createcolorSuccess)
+    .catch(colorUi.failure)
 }
 
-const onShowProposals = function (event) {
+const onShowcolors = function (event) {
   event.preventDefault()
   $('.content').html('')
-  proposalApi.showProposals()
-    .then(proposalUi.showProposalSuccess)
-    .catch(proposalUi.onError)
+  colorApi.showcolors()
+    .then(colorUi.showcolorSuccess)
+    .catch(colorUi.onError)
 }
 
-const onUpdateProposal = (event) => {
+const onUpdatecolor = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  proposalApi.updateProposal(data)
-    .then(proposalUi.updateProposalSuccess)
-    .catch(proposalUi.failure)
+  colorApi.updatecolor(data)
+    .then(colorUi.updatecolorSuccess)
+    .catch(colorUi.failure)
 }
 
-// const onGetProposals = (event) => {
+// const onGetcolors = (event) => {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
-//   proposalApi.getProposals()
-//     .then(proposalUi.getProposalsSuccess)
-//     .catch(proposalUi.failure)
+//   colorApi.getcolors()
+//     .then(colorUi.getcolorsSuccess)
+//     .catch(colorUi.failure)
 // }
 
-const onClearProposal = (event) => {
+const onClearcolor = (event) => {
   event.preventDefault()
-  proposalUi.clearProposal()
+  colorUi.clearcolor()
 }
-// const onDeleteProposal = (event) => {
+// const onDeletecolor = (event) => {
 //   event.preventDefault()
 //   console.log('made it here')
 //   // closest is handlebar syntax
-//   const proposalId = $(event.target).closest('ul').attr('data-id')
-//   proposalApi.deleteProposal(proposalId)
-//     .then(() => onShowProposals(event))
-//     .catch(proposalUi.failure)
+//   const colorId = $(event.target).closest('ul').attr('data-id')
+//   colorApi.deletecolor(colorId)
+//     .then(() => onShowcolors(event))
+//     .catch(colorUi.failure)
 // }
 
 const addHandlers = () => {
-  $('#show_proposals').on('click', onShowProposals)
-  $('#build_proposal').on('submit', onCreateProposal)
-  $('#update_proposal').on('submit', onUpdateProposal)
-  // $('#delete_proposal').on('click', onDeleteProposal)
+  $('#show_colors').on('click', onShowcolors)
+  $('#build_color').on('submit', onCreatecolor)
+  $('#update_color').on('submit', onUpdatecolor)
+  // $('#delete_color').on('click', onDeletecolor)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }
 
-// $('.newProposal').on('click', function () {
+// $('.newcolor').on('click', function () {
 //   store.gameInstance = new Game.Game()
 //   create.createGame()
 //   .then(function (data) {
@@ -71,9 +71,9 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onCreateProposal,
-  // onGetProposals,
-  // onDeleteProposal,
-  onClearProposal,
-  onShowProposals
+  onCreatecolor,
+  // onGetcolors,
+  // onDeletecolor,
+  onClearcolor,
+  onShowcolors
 }

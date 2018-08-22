@@ -1,8 +1,8 @@
 'use strict'
 // const config = require('../config.js')
 const store = require('../store')
-const proposalTemplate = require('../templates/showproposals.handlebars')
-const proposalApi = require('./proposalApi.js')
+const colorTemplate = require('../templates/showcolors.handlebars')
+const colorApi = require('./colorApi.js')
 
 // const onGetGamesSuccess = function (data) {
 //   console.log(data)
@@ -14,37 +14,37 @@ const proposalApi = require('./proposalApi.js')
 
 // const onUserMovesSuccess = function (data) {}
 
-const createProposalSuccess = function (data) {
+const createcolorSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
-  store.proposal = data.proposal
+  store.color = data.color
   console.log('onCreateSuccess ran. Data is :', data)
 }
 
-const showProposalSuccess = function (data) {
+const showcolorSuccess = function (data) {
   console.log(data)
-  const htmltemplate = proposalTemplate({proposals: data.proposals})
+  const htmltemplate = colorTemplate({colors: data.colors})
   $('.content').append(htmltemplate)
-  $('.delete').on('click', onDeleteProposal)
+  $('.delete').on('click', onDeletecolor)
 }
 
-const updateProposalSuccess = function (data) {
+const updatecolorSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
-  store.proposal = data.proposal
+  store.color = data.color
   console.log('onUpdateSuccess ran. Data is :', data)
 }
 
-const onDeleteProposal = (event) => {
+const onDeletecolor = (event) => {
   event.preventDefault()
-  const proposalId = $(event.target).closest('ul').attr('data-id')
+  const colorId = $(event.target).closest('ul').attr('data-id')
   // console.log("delete: " + boardgameId)
-  proposalApi.deleteProposal(proposalId)
-    .then(onDeleteProposalSuccess)
+  colorApi.deletecolor(colorId)
+    .then(onDeletecolorSuccess)
 }
 
-const onDeleteProposalSuccess = function() {
-  console.log('proposaldeleted')
+const onDeletecolorSuccess = function() {
+  console.log('colordeleted')
   // $('#message').html('Game has been Deleted')
   // $('#message').css('background-color', 'green')
   // $('#message').css('font-size', '20px')
@@ -111,10 +111,10 @@ const onDeleteProposalSuccess = function() {
 
 
 module.exports = {
-  createProposalSuccess,
-  showProposalSuccess,
-  updateProposalSuccess,
-  onDeleteProposal
+  createcolorSuccess,
+  showcolorSuccess,
+  updatecolorSuccess,
+  onDeletecolor
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

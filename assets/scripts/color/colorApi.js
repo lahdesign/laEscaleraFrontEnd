@@ -1,9 +1,9 @@
 const config = require('../config')
 const store = require('../store')
 
-const createProposal = function (data) {
+const createcolor = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/proposals/',
+    url: config.apiUrl + '/colors/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -12,9 +12,9 @@ const createProposal = function (data) {
 
   })
 }
-const showProposals = function () {
+const showcolors = function () {
   return $.ajax({
-    url: config.apiUrl + '/proposals/',
+    url: config.apiUrl + '/colors/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -22,9 +22,9 @@ const showProposals = function () {
   })
 }
 
-const updateProposal = function (data) {
+const updatecolor = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/proposals/' + data.proposal.id,
+    url: config.apiUrl + '/colors/' + data.color.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -32,9 +32,9 @@ const updateProposal = function (data) {
     data
   })
 }
-const deleteProposal = (proposalId) => {
+const deletecolor = (colorId) => {
   return $.ajax({
-    url: config.apiUrl + '/proposals/' + proposalId,
+    url: config.apiUrl + '/colors/' + colorId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -43,8 +43,8 @@ const deleteProposal = (proposalId) => {
 }
 
 module.exports = {
-  createProposal,
-  updateProposal,
-  showProposals,
-  deleteProposal
+  createcolor,
+  updatecolor,
+  showcolors,
+  deletecolor
 }
