@@ -30,6 +30,30 @@ function updateAll (event) {
   })
 }
 
+// BACKGROUND
+let colorWellBackground
+window.addEventListener('load', startupBackground, false)
+
+function startupBackground () {
+  colorWellBackground = document.querySelector('#colorWellBackground')
+  colorWellBackground.value = defaultColor
+  colorWellBackground.addEventListener('input', updateFirstBackground, false)
+  colorWellBackground.addEventListener('change', updateAllBackground, false)
+  colorWellBackground.select()
+}
+function updateFirstBackground (event) {
+  const body = document.querySelector('body')
+
+  if (body) {
+    body.style.backgroundColor = event.target.value
+  }
+}
+function updateAllBackground (event) {
+  document.querySelectorAll('background').forEach(function (background) {
+    background.style.color = event.target.value
+  })
+}
+
 // const onCreateColor = (event) => {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)

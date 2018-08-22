@@ -13,6 +13,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <background>
       <h1>La Escalera</h1>
 
       <!-- <img src="images/diamondThree.gif" alt="diamond"> -->
@@ -67,17 +68,7 @@
        </fieldset>
      </form>
 </div>
-     <fieldset>
-      <legend>Select your background color</legend>
-      <div>
-          <input type="color" name="color"/>
-          <input type="changeBackground" value="change Background"> Change Background</input>
-      </div>
-    </fieldset>
-    <div id="message"></div>
-    </div>
 
-    
       <p>An example demonstrating the use of the <code>&lt;input type="color"&gt;</code>
         control.</p>
 
@@ -86,6 +77,11 @@
 
      <p>Watch the paragraph colors change when you adjust the color picker.
     </p>
+  </div>
+    <!-- BACKGROUND CHANGER -->
 
+   <label for="colorWellBackground">Background Color:</label>
+   <input type="color" value="#ff0000" id="colorWellBackground">
+    </background>
     </body>
 </html>
