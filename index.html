@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>La Escalera</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" type="text/css" href="assets/styles/index.scss">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>La Escalera</h1>
+      <fieldset>
+        <legend>Select your background color</legend>
+
+        <div>
+            <input type="color" id="head" name="color"
+                   value="#e66465" />
+            <label for="background">background</label>
+
+            </div>
+      </fieldset>
+            <button type="changeBackground">change background</button>
     </body>
 </html>
