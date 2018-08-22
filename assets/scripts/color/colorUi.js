@@ -14,107 +14,107 @@ const colorApi = require('./colorApi.js')
 
 // const onUserMovesSuccess = function (data) {}
 
-const createcolorSuccess = function (data) {
-  $('#message').text('Example successfully created')
+const createColorSuccess = function (data) {
+  $('#message').text('Color successfully created')
   $('#message').css('background-color', 'green')
   store.color = data.color
   console.log('onCreateSuccess ran. Data is :', data)
 }
 
-const showcolorSuccess = function (data) {
-  console.log(data)
-  const htmltemplate = colorTemplate({colors: data.colors})
-  $('.content').append(htmltemplate)
-  $('.delete').on('click', onDeletecolor)
-}
-
-const updatecolorSuccess = function (data) {
-  $('#message').text('Example successfully created')
-  $('#message').css('background-color', 'green')
-  store.color = data.color
-  console.log('onUpdateSuccess ran. Data is :', data)
-}
-
-const onDeletecolor = (event) => {
-  event.preventDefault()
-  const colorId = $(event.target).closest('ul').attr('data-id')
-  // console.log("delete: " + boardgameId)
-  colorApi.deletecolor(colorId)
-    .then(onDeletecolorSuccess)
-}
-
-const onDeletecolorSuccess = function() {
-  console.log('colordeleted')
-  // $('#message').html('Game has been Deleted')
-  // $('#message').css('background-color', 'green')
-  // $('#message').css('font-size', '20px')
-  // $('#message').css('text-align', 'center')
-  // $('#message').css('font-family', 'Gaegu')
-  // $('#message').removeClass('hidden')
-  // $('#show-game-modal').modal('hide')
-
-}
-
-// const onCreateFailure = function (error) {
-//   $('#message').text('Error on creating example')
-//   $('#message').css('background-color', 'red')
-//   console.error('onCreateFailure ran. Error is :', error)
+// const showcolorSuccess = function (data) {
+//   console.log(data)
+//   const htmltemplate = colorTemplate({colors: data.colors})
+//   $('.content').append(htmltemplate)
+//   $('.delete').on('click', onDeletecolor)
 // }
 
-// const onIndexSuccess = function (data) {
-//   $('#message').text('All Examples successfully received')
+// const updatecolorSuccess = function (data) {
+//   $('#message').text('Example successfully created')
 //   $('#message').css('background-color', 'green')
-//   console.log('onIndexSuccess ran. Data is :', data.examples)
+//   store.color = data.color
+//   console.log('onUpdateSuccess ran. Data is :', data)
 // }
 
-// const onIndexFailure = function (error) {
-//   $('#message').text('Error on getting examples')
-//   $('#message').css('background-color', 'red')
-//   console.error('onIndexFailure ran. Error is :', error)
+// const onDeletecolor = (event) => {
+//   event.preventDefault()
+//   const colorId = $(event.target).closest('ul').attr('data-id')
+//   // console.log("delete: " + boardgameId)
+//   colorApi.deletecolor(colorId)
+//     .then(onDeletecolorSuccess)
 // }
 
-// const onShowSuccess = function (data) {
-//   $('#message').text('One Example successfully received')
-//   $('#message').css('background-color', 'green')
-//   console.log('onCreateSuccess ran. Data is :', data)
+// const onDeletecolorSuccess = function() {
+//   console.log('colordeleted')
+//   // $('#message').html('Game has been Deleted')
+//   // $('#message').css('background-color', 'green')
+//   // $('#message').css('font-size', '20px')
+//   // $('#message').css('text-align', 'center')
+//   // $('#message').css('font-family', 'Gaegu')
+//   // $('#message').removeClass('hidden')
+//   // $('#show-game-modal').modal('hide')
+
 // }
 
-// const onShowFailure = function (error) {
-//   $('#message').text('Error on getting example')
-//   $('#message').css('background-color', 'red')
-//   console.error('onShowFailure ran. Error is :', error)
-// }
+// // const onCreateFailure = function (error) {
+// //   $('#message').text('Error on creating example')
+// //   $('#message').css('background-color', 'red')
+// //   console.error('onCreateFailure ran. Error is :', error)
+// // }
 
-// const onDestroySuccess = function () {
-//   $('#message').text('Example successfully deleted')
-//   $('#message').css('background-color', 'green')
-//   console.log('Example successfully deleted')
-// }
+// // const onIndexSuccess = function (data) {
+// //   $('#message').text('All Examples successfully received')
+// //   $('#message').css('background-color', 'green')
+// //   console.log('onIndexSuccess ran. Data is :', data.examples)
+// // }
 
-// const onDestroyFailure = function (error) {
-//   $('#message').text('Error on deleting example')
-//   $('#message').css('background-color', 'red')
-//   console.error('onDestroyFailure ran. Error is :', error)
-// }
+// // const onIndexFailure = function (error) {
+// //   $('#message').text('Error on getting examples')
+// //   $('#message').css('background-color', 'red')
+// //   console.error('onIndexFailure ran. Error is :', error)
+// // }
 
-// const onUpdateSuccess = function () {
-//   $('#message').text('Example successfully updated')
-//   $('#message').css('background-color', 'green')
-//   console.log('Example successfully updated')
-// }
+// // const onShowSuccess = function (data) {
+// //   $('#message').text('One Example successfully received')
+// //   $('#message').css('background-color', 'green')
+// //   console.log('onCreateSuccess ran. Data is :', data)
+// // }
 
-// const onUpdateFailure = function (error) {
-//   $('#message').text('Error on updating example')
-//   $('#message').css('background-color', 'red')
-//   console.error('onUpdateFailure ran. Error is :', error)
-// }
+// // const onShowFailure = function (error) {
+// //   $('#message').text('Error on getting example')
+// //   $('#message').css('background-color', 'red')
+// //   console.error('onShowFailure ran. Error is :', error)
+// // }
+
+// // const onDestroySuccess = function () {
+// //   $('#message').text('Example successfully deleted')
+// //   $('#message').css('background-color', 'green')
+// //   console.log('Example successfully deleted')
+// // }
+
+// // const onDestroyFailure = function (error) {
+// //   $('#message').text('Error on deleting example')
+// //   $('#message').css('background-color', 'red')
+// //   console.error('onDestroyFailure ran. Error is :', error)
+// // }
+
+// // const onUpdateSuccess = function () {
+// //   $('#message').text('Example successfully updated')
+// //   $('#message').css('background-color', 'green')
+// //   console.log('Example successfully updated')
+// // }
+
+// // const onUpdateFailure = function (error) {
+// //   $('#message').text('Error on updating example')
+// //   $('#message').css('background-color', 'red')
+// //   console.error('onUpdateFailure ran. Error is :', error)
+// // }
 
 
 module.exports = {
-  createcolorSuccess,
-  showcolorSuccess,
-  updatecolorSuccess,
-  onDeletecolor
+  createColorSuccess
+  // showcolorSuccess,
+  // updatecolorSuccess,
+  // onDeletecolor
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

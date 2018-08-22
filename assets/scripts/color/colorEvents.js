@@ -1,59 +1,83 @@
 'use strict'
 // const config = require('../config')
-const getFormFields = require('../../../lib/get-form-fields')
-const colorApi = require('../Color/colorApi')
-const colorUi = require('../color/colorUi')
+// const getFormFields = require('../../../lib/get-form-fields')
+// const colorApi = require('../color/colorApi')
+// const colorUi = require('../color/colorUi')
+let colorWell
+const defaultColor = '#0000ff'
 
-const onCreateColor = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  colorApi.createcolor(data)
-    .then(colorUi.createcolorSuccess)
-    .catch(colorUi.failure)
+window.addEventListener('load', startup, false)
+
+function startup () {
+  colorWell = document.querySelector('#colorWell')
+  colorWell.value = defaultColor
+  colorWell.addEventListener('input', updateFirst, false)
+  colorWell.addEventListener('change', updateAll, false)
+  colorWell.select()
+}
+function updateFirst (event) {
+  const p = document.querySelector('p')
+
+  if (p) {
+    p.style.color = event.target.value
+  }
 }
 
-const onShowColors = function (event) {
-  event.preventDefault()
-  $('.content').html('')
-  colorApi.showcolors()
-    .then(colorUi.showcolorSuccess)
-    .catch(colorUi.onError)
+function updateAll (event) {
+  document.querySelectorAll('p').forEach(function (p) {
+    p.style.color = event.target.value
+  })
 }
 
-const onUpdateColor = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  colorApi.updatecolor(data)
-    .then(colorUi.updatecolorSuccess)
-    .catch(colorUi.failure)
-}
-
-// const onGetColors = (event) => {
+// const onCreateColor = (event) => {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
-//   colorApi.getColors()
-//     .then(colorUi.getColorsSuccess)
+//   colorApi.createcolor(data)
+//     .then(colorUi.createcolorSuccess)
 //     .catch(colorUi.failure)
 // }
-
-const onClearColor = (event) => {
-  event.preventDefault()
-  colorUi.clearColor()
-}
-// const onDeleteColor = (event) => {
+// const onShowColors = function (event) {
 //   event.preventDefault()
-//   console.log('made it here')
-//   // closest is handlebar syntax
-//   const colorId = $(event.target).closest('ul').attr('data-id')
-//   colorApi.deleteColor(colorId)
-//     .then(() => onShowColors(event))
+//   $('.content').html('')
+//   colorApi.showcolors()
+//     .then(colorUi.showcolorSuccess)
+//     .catch(colorUi.onError)
+// }
+
+// const onUpdateColor = (event) => {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   colorApi.updatecolor(data)
+//     .then(colorUi.updatecolorSuccess)
 //     .catch(colorUi.failure)
 // }
 
-const addHandlers = () => {
-  $('#show_colors').on('click', onShowColors)
-  $('#build_color').on('submit', onCreateColor)
-  $('#update_color').on('submit', onUpdateColor)
+// // const onGetColors = (event) => {
+// //   event.preventDefault()
+// //   const data = getFormFields(event.target)
+// //   colorApi.getColors()
+// //     .then(colorUi.getColorsSuccess)
+// //     .catch(colorUi.failure)
+// // }
+
+// const onClearColor = (event) => {
+//   event.preventDefault()
+//   colorUi.clearColor()
+// }
+// // const onDeleteColor = (event) => {
+// //   event.preventDefault()
+// //   console.log('made it here')
+// //   // closest is handlebar syntax
+// //   const colorId = $(event.target).closest('ul').attr('data-id')
+// //   colorApi.deleteColor(colorId)
+// //     .then(() => onShowColors(event))
+// //     .catch(colorUi.failure)
+// // }
+
+// const addHandlers = () => {
+  // $('#show_colors').on('click', onShowColors)
+  // $('#build_color').on('submit', onCreateColor)
+  // $('#update_color').on('submit', onUpdateColor)
   // $('#delete_color').on('click', onDeletecolor)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
@@ -70,10 +94,10 @@ const addHandlers = () => {
 // })
 
 module.exports = {
-  addHandlers,
-  onCreateColor,
+  // addHandlers,
+  // onCreateColor
   // onGetColors,
   // onDeleteColor,
-  onClearColor,
-  onShowColors
+  // onClearColor,
+  // onShowColors
 }

@@ -15,28 +15,14 @@
     <body>
       <h1>La Escalera</h1>
 
-      <img src="./assets/images/diamondpatch_two.gif" alt="diamond">
-
-      <div id = "background">
-        <p>
-
-        </p>
-
-      </div>
+      <!-- <img src="images/diamondThree.gif" alt="diamond"> -->
 
       <div id = "info">
           <p>
-              General info about the pop up
+              General info
             </p>
 
       </div>
-
-      <div id = "callForProposals">
-          <p>
-              Call for Proposals
-            </p>
-      </div>
-
       <div id = "signUp">
         <form id="sign_up" class="border">
           <fieldset>
@@ -81,48 +67,29 @@
        </fieldset>
      </form>
 
-
-
-      <div id="buildColor">
-        <form id="build_proposal" class="border">
-          <fieldset>
-            <legend>Build Color</legend>
-            <input type="color" name="color[value]" placeholder="Color Value">
-          </fieldset>
-        </form>
+     <fieldset>
+      <legend>Select your background color</legend>
+      <div>
+          <input type="color" name="color"/>
+          <input type="changeBackground" value="change Background"> Change Background</input>
       </div>
-      <div class="content"></div>
-      <div id = "updateColor">
-        <form id="update_color" class="border">
-          <fieldset>
-            <legend>Update color</legend>
-            <input type="color" name="color[value]" placeholder="Color Value">
-          </fieldset>
-        </form>
+    </fieldset>
+    <div id="message"></div>
+    </div>
 
-        <button id="show_colors">Show All Colors</button>
-
-
-      <div id = "viewColor">
-          <p>
-              View Color
-            </p>
       </div>
-      <div id = "allColors">
-          <p>
-              All Colors
-            </p>
-      </div>
-      <fieldset>
-        <legend>Select your background color</legend>
+      <p>An example demonstrating the use of the <code>&lt;input type="color"&gt;</code>
+        control.</p>
 
-        <div>
-            <input type="color" id="head" name="color"
-                   value="#e66465" />
-            <label for="background">background</label>
+     <label for="colorWell">Color:</label>
+     <input type="color" value="#ff0000" id="colorWell">
 
-            </div>
-      </fieldset>
-            <button type="changeBackground">change background</button>
+     <p>Watch the paragraph colors change when you adjust the color picker.
+        As you make changes in the color picker, the first paragraph's
+        color changes, as a preview (this uses the <code>input</code>
+        event). When you close the color picker, the <code>change</code>
+        event fires, and we detect that to change every paragraph to
+        the selected color.</p>
+  
     </body>
 </html>
