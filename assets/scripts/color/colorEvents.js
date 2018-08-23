@@ -61,13 +61,13 @@ function updateAllBackground (event) {
 //     .then(colorUi.createcolorSuccess)
 //     .catch(colorUi.failure)
 // }
-// const onShowColors = function (event) {
+const onShowColors = function (event) {
 //   event.preventDefault()
 //   $('.content').html('')
 //   colorApi.showcolors()
 //     .then(colorUi.showcolorSuccess)
 //     .catch(colorUi.onError)
-// }
+}
 
 // const onUpdateColor = (event) => {
 //   event.preventDefault()
@@ -100,7 +100,7 @@ function updateAllBackground (event) {
 // // }
 
 const addHandlers = () => {
-  // $('#show_colors').on('click', onShowColors)
+  $('#showColors').on('click', onShowColors)
   // $('#build_color').on('submit', onCreateColor)
   // $('#update_color').on('submit', onUpdateColor)
   // $('#delete_color').on('click', onDeletecolor)
@@ -124,5 +124,5 @@ module.exports = {
   // onGetColors,
   // onDeleteColor,
   // onClearColor,
-  // onShowColors
+  onShowColors
 }

@@ -23,6 +23,8 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.onSignInSuccess)
     .catch(authUi.onSignInFailure)
+  $('#logIn').hide()
+  $('#userInfo').show()
   $('#buildColor').show()
 }
 
@@ -40,8 +42,22 @@ const onSignOut = function (event) {
     .then(authUi.onSignOutSuccess)
     .catch(authUi.failure)
 }
+const onShowColors = function (event) {
+  $('#buildColor').hide()
+  $('#showColors').show()
+  //   event.preventDefault()
+  //   $('.content').html('')
+  //   colorApi.showcolors()
+  //     .then(colorUi.showcolorSuccess)
+  //     .catch(colorUi.onError)
+}
 
 const addHandlers = () => {
+  $('#showColors').hide()
+  $('#linedPaper').hide()
+  $('#userInfo').hide()
+  $('#showColors').on('click', onShowColors)
+  $('#buildColor').hide()
   $('#sign_up').on('submit', onSignUp)
   $('#sign_in').on('submit', onSignIn)
   $('#change_password').on('submit', onchangePassword)
@@ -54,5 +70,4 @@ module.exports = {
   onchangePassword,
   onSignOut,
   addHandlers
-
 }
