@@ -56,7 +56,7 @@ const addHandlers = () => {
   $('#showColors').hide()
   $('#linedPaper').hide()
   $('#userInfo').hide()
-  $('#showColors').on('click', onShowColors)
+  $('#showEntireColors').on('click', onShowColors)
   $('#buildColor').hide()
   $('#sign_up').on('submit', onSignUp)
   $('#sign_in').on('submit', onSignIn)
