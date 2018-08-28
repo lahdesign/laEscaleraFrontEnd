@@ -21,27 +21,27 @@ const createColorSuccess = function (data) {
   console.log('onCreateSuccess ran. Data is :', data)
 }
 
-// const showcolorSuccess = function (data) {
-//   console.log(data)
-//   const htmltemplate = colorTemplate({colors: data.colors})
-//   $('.content').append(htmltemplate)
-//   $('.delete').on('click', onDeletecolor)
-// }
+const showColorSuccess = function (data) {
+  console.log(data)
+  const htmltemplate = colorTemplate({colors: data.colors})
+  $('.content').append(htmltemplate)
+  $('.delete').on('click', onDeletecolor)
+}
 
-// const updatecolorSuccess = function (data) {
-//   $('#message').text('Example successfully created')
-//   $('#message').css('background-color', 'green')
-//   store.color = data.color
-//   console.log('onUpdateSuccess ran. Data is :', data)
-// }
+const updateColorSuccess = function (data) {
+  $('#message').text('Example successfully created')
+  $('#message').css('background-color', 'green')
+  store.color = data.color
+  console.log('onUpdateSuccess ran. Data is :', data)
+}
 
-// const onDeletecolor = (event) => {
-//   event.preventDefault()
-//   const colorId = $(event.target).closest('ul').attr('data-id')
-//   // console.log("delete: " + boardgameId)
-//   colorApi.deletecolor(colorId)
-//     .then(onDeletecolorSuccess)
-// }
+const onDeletecolor = (event) => {
+  event.preventDefault()
+  const colorId = $(event.target).closest('ul').attr('data-id')
+  // console.log("delete: " + boardgameId)
+  colorApi.deletecolor(colorId)
+    .then(onDeletecolorSuccess)
+}
 
 // const onDeletecolorSuccess = function() {
 //   console.log('colordeleted')
@@ -112,9 +112,9 @@ const createColorSuccess = function (data) {
 
 module.exports = {
   createColorSuccess
-  // showcolorSuccess,
-  // updatecolorSuccess,
-  // onDeletecolor
+  showColorSuccess,
+  updateColorSuccess,
+  onDeletecolor
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,
