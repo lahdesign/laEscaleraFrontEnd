@@ -54,7 +54,7 @@ const onShowColors = function (event) {
 
 const addHandlers = () => {
   $('#showColors').hide()
-  $('#linedPaper').hide()
+  $('#linedPaper').show()
   $('#userInfo').hide()
   $('#showEntireColors').on('click', onShowColors)
   $('#buildColor').hide()
