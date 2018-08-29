@@ -1,7 +1,7 @@
 'use strict'
 // const config = require('../config.js')
 const store = require('../store')
-// const colorTemplate = require('./templates/showcolors.handlebars')
+const colorTemplate = require('./templates/showcolors.handlebars')
 // const colorApi = require('./colorApi.js')
 
 const createColorSuccess = function (data) {
@@ -11,12 +11,12 @@ const createColorSuccess = function (data) {
   console.log('onCreateSuccess ran. Data is :', data)
 }
 
-// const showColorSuccess = function (data) {
-//   console.log(data)
-//   const htmltemplate = colorTemplate({colors: data.colors})
-//   $('.content').append(htmltemplate)
-//   $('.delete').on('click', onDeletecolor)
-// }
+const showColorSuccess = function (data) {
+  console.log(data)
+  const htmltemplate = colorTemplate({colors: data.colors})
+  $('.content').append(htmltemplate)
+  // $('.delete').on('click', onDeletecolor)
+}
 
 // const updateColorSuccess = function (data) {
 //   $('#message').text('Example successfully created')
@@ -34,8 +34,8 @@ const createColorSuccess = function (data) {
 // }
 
 module.exports = {
-  createColorSuccess
-  // showColorSuccess,
+  createColorSuccess,
+  showColorSuccess
   // updateColorSuccess,
   // onDeletecolor
 //   onCreateSuccess,
