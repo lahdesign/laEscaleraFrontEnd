@@ -56,7 +56,7 @@ function updateFirstBackground (event) {
 function updateAllBackground (event) {
   document.querySelectorAll('background').forEach(function (background) {
     background.style.color = event.target.value
-    const data = {value: background.style.color}
+    const data = {color: {value: background.style.color}}
     console.log(data)
     colorApi.createColor(data)
       .then(colorUi.createColorSuccess)
@@ -119,10 +119,10 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers,
-  onCreateColor,
-  onGetColors,
-  onDeleteColor,
-  onClearColor,
-  onShowColors
+  addHandlers
+  // onCreateColor
+  // onGetColors,
+  // onDeleteColor,
+  // onClearColor,
+  // onShowColors
 }

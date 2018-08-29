@@ -2,6 +2,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createColor = function (data) {
+  console.log('got here')
   return $.ajax({
     url: config.apiUrl + '/colors/',
     method: 'POST',
