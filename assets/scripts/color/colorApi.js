@@ -43,7 +43,7 @@ const deleteColor = (colorId) => {
 }
 
 module.exports = {
-  createColor
+  createColor,
   updateColor,
   showColors,
   deleteColor

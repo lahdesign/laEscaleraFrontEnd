@@ -1,8 +1,8 @@
 'use strict'
 // const config = require('../config')
 // const getFormFields = require('../../../lib/get-form-fields')
-// const colorApi = require('../color/colorApi')
-// const colorUi = require('../color/colorUi')
+const colorApi = require('../color/colorApi')
+const colorUi = require('../color/colorUi')
 let colorWell
 const defaultColor = '#0000ff'
 
@@ -33,6 +33,10 @@ function updateAll (event) {
 }
 
 // colorChanging Code, Background
+
+//TODO how do I create one function called onCreateColor that runs?
+// function onCreateColor {
+
 let colorWellBackground
 window.addEventListener('load', startupBackground, false)
 
@@ -52,13 +56,13 @@ function updateFirstBackground (event) {
 function updateAllBackground (event) {
   document.querySelectorAll('background').forEach(function (background) {
     background.style.color = event.target.value
-    // TODO what goes in as data?
+    const data = {value: background.style.color}
+    console.log(data)
     colorApi.createColor(data)
-    .then(colorUi.createColorSuccess)
-    .catch(colorUi.failure)
+      .then(colorUi.createColorSuccess)
+      .catch(colorUi.failure)
   })
 }
-
 // const onCreateColor = (event) => {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -106,17 +110,17 @@ function updateAllBackground (event) {
 // }
 
 const addHandlers = () => {
-  $('#showColors').on('click', onShowColors)
-  $('#build_color').on('submit', onCreateColor)
-  $('#update_color').on('submit', onUpdateColor)
-  $('#delete_color').on('click', onDeletecolor)
-  $('#clearBooksButton').on('click', onClearBooks)
-  $('.content').on('click', onDeleteBook )
+  // $('#showColors').on('click', onShowColors)
+  // $('#build_color').on('submit', onCreateColor)
+  // $('#update_color').on('submit', onUpdateColor)
+  // $('#delete_color').on('click', onDeletecolor)
+  // $('#clearBooksButton').on('click', onClearBooks)
+  // $('.content').on('click', onDeleteBook )
 }
 
 module.exports = {
   addHandlers,
-  onCreateColor
+  onCreateColor,
   onGetColors,
   onDeleteColor,
   onClearColor,
