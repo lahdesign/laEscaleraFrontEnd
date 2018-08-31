@@ -13,9 +13,12 @@ const createColorSuccess = function (data) {
 
 const showColorSuccess = function (data) {
   console.log(data)
-  const htmltemplate = colorTemplate({colors: data.colors})
-  $('.content').append(htmltemplate)
-  // $('.delete').on('click', onDeletecolor)
+  for (let i = 0; i < data.length; i++) {
+    $('#allColors ul').append(`<li>
+            <h1>${data[i].value}</h1>
+            </li>`)
+  }
+  $('.delete').on('click', onDeletecolor)
 }
 
 // const updateColorSuccess = function (data) {
