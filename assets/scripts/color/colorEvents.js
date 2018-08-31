@@ -71,13 +71,13 @@ const onShowColors = function (event) {
     .catch(colorUi.onError)
 }
 
-// const onUpdateColor = (event) => {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   colorApi.updatecolor(data)
-//     .then(colorUi.updatecolorSuccess)
-//     .catch(colorUi.failure)
-// }
+const onUpdateColor = (event) => {
+  event.preventDefault()
+  const data = $(event.target).attr('data-id')
+  colorApi.updateColor(data)
+    .then(colorUi.updateColorSuccess)
+    .catch(colorUi.failure)
+}
 
 // const onGetColors = (event) => {
 //   event.preventDefault()
@@ -96,7 +96,6 @@ const onDeleteColor = (event) => {
   event.preventDefault()
   console.log('made it here')
   const colorId = $(event.target).attr('data-id')
-  console.log(colorId)
   colorApi.deleteColor(colorId)
     .then(() => onShowColors(event))
     .catch(colorUi.failure)
@@ -106,7 +105,7 @@ const addHandlers = () => {
   $('#showEntireColors').on('click', onShowColors)
   $('#allColors').on('click', '.delete', onDeleteColor)
   // $('#build_color').on('submit', onCreateColor)
-  // $('#update_color').on('submit', onUpdateColor)
+  $('#allColors').on('click', '.update', onUpdateColor)
   // $('#delete_color').on('click', onDeletecolor)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )

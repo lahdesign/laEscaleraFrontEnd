@@ -24,6 +24,7 @@ const showColors = function () {
 }
 
 const updateColor = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/colors/' + data.color.id,
     method: 'PATCH',
