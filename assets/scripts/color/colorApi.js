@@ -26,12 +26,12 @@ const showColors = function () {
 const updateColor = function (data) {
   console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/colors/' + data.color.id,
+    url: config.apiUrl + '/colors/' + data,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {color: {id: data}}
   })
 }
 const deleteColor = (colorId) => {

@@ -13,11 +13,11 @@ const createColorSuccess = function (data) {
 
 const showColorSuccess = function (data) {
   for (let i = 0; i < data.colors.length; i++) {
-    $('#allColors ul').append(`<li>
+    $('#allColors ul').append(`<li data-li=${i}  >
             <h2>${data.colors[i].value}</h2>
             </li>
             <input class="delete" data-id="${data.colors[i].id}" type="button" value="Delete">
-            <input class="update" data-id="${data.colors[i].id}" type="button" value="Update">
+            <input class="update" data-update="${data.colors[i].id}" type="button" value="Update">
 
             `)
   }
@@ -26,6 +26,7 @@ const showColorSuccess = function (data) {
 const updateColorSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
+  // $(`data-id-${id}`).innerHTML('RGB(0,0,0')
   store.color = data.color
   console.log('onUpdateSuccess ran. Data is :', data)
 }

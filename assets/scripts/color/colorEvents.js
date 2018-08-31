@@ -73,7 +73,14 @@ const onShowColors = function (event) {
 
 const onUpdateColor = (event) => {
   event.preventDefault()
-  const data = $(event.target).attr('data-id')
+  console.log($(event.target).attr('data-update'))
+  const data =
+  {
+    color: {
+    id: $(event.target).attr('data-update')
+  }
+  }
+  console.log(data)
   colorApi.updateColor(data)
     .then(colorUi.updateColorSuccess)
     .catch(colorUi.failure)
