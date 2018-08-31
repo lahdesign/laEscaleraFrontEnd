@@ -1,7 +1,7 @@
 'use strict'
 // const config = require('../config.js')
 const store = require('../store')
-const colorTemplate = require('./templates/showcolors.handlebars')
+// const colorTemplate = require('./templates/showcolors.handlebars')
 // const colorApi = require('./colorApi.js')
 
 const createColorSuccess = function (data) {
@@ -12,13 +12,14 @@ const createColorSuccess = function (data) {
 }
 
 const showColorSuccess = function (data) {
-  console.log(data)
-  for (let i = 0; i < data.length; i++) {
+  console.log('got here')
+  for (let i = 0; i < data.colors.length; i++) {
     $('#allColors ul').append(`<li>
-            <h1>${data[i].value}</h1>
-            </li>`)
+            <h1>${data.colors[i].value}</h1>
+            </li>
+            <input class="delete" data-id="${data.colors[i].id}" type="button" value="Delete">
+            `)
   }
-  $('.delete').on('click', onDeletecolor)
 }
 
 // const updateColorSuccess = function (data) {

@@ -11,7 +11,6 @@ window.addEventListener('load', startup, false)
 // color changing code for the paragraph
 
 function startup () {
-  console.log('loaded')
   colorWell = document.querySelector('#colorWell')
   colorWell.value = defaultColor
   colorWell.addEventListener('input', updateFirst, false)
@@ -66,9 +65,9 @@ function updateAllBackground (event) {
 // }
 const onShowColors = function (event) {
   event.preventDefault()
-  $('.content').html('')
-  colorApi.showcolors()
-    .then(colorUi.showcolorSuccess)
+  // $('.content').html('')
+  colorApi.showColors()
+    .then(colorUi.showColorSuccess)
     .catch(colorUi.onError)
 }
 
@@ -93,18 +92,19 @@ const onShowColors = function (event) {
 //   colorUi.clearColor()
 // }
 
-// const onDeleteColor = (event) => {
-//   event.preventDefault()
-//   console.log('made it here')
-//   // closest is handlebar syntax
-//   const colorId = $(event.target).closest('ul').attr('data-id')
-//   colorApi.deleteColor(colorId)
-//     .then(() => onShowColors(event))
-//     .catch(colorUi.failure)
-// }
+const onDeleteColor = (event) => {
+  event.preventDefault()
+  console.log('made it here')
+  const colorId = $(event.target).attr('data-id')
+  console.log(colorId)
+  colorApi.deleteColor(colorId)
+    .then(() => onShowColors(event))
+    .catch(colorUi.failure)
+}
 
 const addHandlers = () => {
-  $('#showColors').on('click', onShowColors)
+  $('#showEntireColors').on('click', onShowColors)
+  $('#allColors').on('click', '.delete', onDeleteColor)
   // $('#build_color').on('submit', onCreateColor)
   // $('#update_color').on('submit', onUpdateColor)
   // $('#delete_color').on('click', onDeletecolor)
@@ -113,10 +113,10 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
   // onCreateColor
   // onGetColors,
   // onDeleteColor,
   // onClearColor,
-  // onShowColors
+  onShowColors
 }
