@@ -32,11 +32,6 @@ function updateAll (event) {
   })
 }
 
-// colorChanging Code, Background
-
-//TODO how do I create one function called onCreateColor that runs?
-// function onCreateColor {
-
 let colorWellBackground
 window.addEventListener('load', startupBackground, false)
 
@@ -57,7 +52,6 @@ function updateAllBackground (event) {
   document.querySelectorAll('background').forEach(function (background) {
     background.style.color = event.target.value
     const data = {color: {value: background.style.color}}
-    console.log(data)
     colorApi.createColor(data)
       .then(colorUi.createColorSuccess)
       .catch(colorUi.failure)
