@@ -77,10 +77,10 @@ const onUpdateColor = (event) => {
   const data =
   {
     color: {
-    id: $(event.target).attr('data-update')
+      id: $(event.target).attr('data-update')
+    }
   }
-  }
-  console.log(data)
+  console.log('message', data)
   colorApi.updateColor(data)
     .then(colorUi.updateColorSuccess)
     .catch(colorUi.failure)

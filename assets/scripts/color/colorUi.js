@@ -26,7 +26,8 @@ const showColorSuccess = function (data) {
 const updateColorSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
-  // $(`data-id-${id}`).innerHTML('RGB(0,0,0')
+  debugger
+  $(`[data-li=${data.color.id}]`).text('rgb(0,0,0)')
   store.color = data.color
   console.log('onUpdateSuccess ran. Data is :', data)
 }
