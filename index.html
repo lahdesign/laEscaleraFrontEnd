@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>La Escalera</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" type="text/css" href="assets/styles/index.scss">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <background>
+      <h1>La Escalera</h1>
+      <div id="message">
+
+      </div>
+  <div id ="logIn">
+          <img src="public/laEscalera.gif" alt="rainbow">
+      <div id = "signUp">
+        <form id="sign_up" class="border">
+          <fieldset>
+            <legend>Create User</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+
+      <div id = "signIn">
+        <form id="sign_in" class="border">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+</div>
+         <!-- Start of user info -->
+  <!-- display user info on signIn -->
+<div id = "userInfo">
+    <form id="change_password" class="border">
+     <fieldset>
+       <legend>Change password</legend>
+       <input type="password" name="passwords[old]" placeholder="Old Password">
+       <input type="password" name="passwords[new]" placeholder="New Password">
+       <input type="submit" value="Change Password!">
+     </fieldset>
+   </form>
+
+   <form id="sign_out" class="border">
+       <fieldset>
+         <legend>Sign Out!</legend>
+         <input type="submit" value="Sign out!">
+       </fieldset>
+     </form>
+</div>
+
+<div id="buildColor">
+    <img src="public/diamondSix.gif" alt="diamond">
+
+      <p>An example demonstrating the use of the <code>&lt;input type="color"&gt;</code>
+        control.</p>
+
+     <label for="colorWell">Paragraph Color:</label>
+     <input type="color" value="#ff0000" id="colorWell">
+
+     <p>The colors of the paragraphs will change when you select a color.</p>
+    <!-- BACKGROUND CHANGER -->
+
+   <label for="colorWellBackground">Background Color:</label>
+   <input type="color" value="#ff0000" id="colorWellBackground">
+   <input type="button" id="showEntireColors" value="Show All colors">
+   <input type="button" value="About the Project">
+
+  </div>
+
+  <div id="allColors">
+      <!-- <img src="public/colorChange.gif" alt="color change"> -->
+        <ul>
+        </ul>
+      </div>
+
+
+<p>This is text about the project</p>
+   <div id="linedPaper">
+    <div class="p p-1"></div>
+    <div class="p p-2"></div>
+    <div class="p p-3"></div>
+    <div class="p p-4"></div>
+    <div class="p p-5"></div>
+    <div class="p p-6"></div>
+    <div class="p p-7"></div>
+    <div class="p p-8"></div>
+    <div class="p p-9"></div>
+    <div class="p p-10"></div>
+    <div class="p p-11"></div>
+    <div class="p p-12"></div>
+    <div class="p p-13"></div>
+    <div class="p p-14"></div>
+</div>
+    </background>
+    </body>
+</html>
